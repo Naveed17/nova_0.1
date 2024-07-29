@@ -9,7 +9,7 @@ function Header() {
     const pathname = usePathname();
 
     return (
-        <header className='flex flex-col pb-4 border-b border-gray-200 sticky top-0 bg-white z-50'>
+        <header className='flex flex-col pb-4 border-b border-gray-200 sticky top-0 bg-white z-[99999]'>
             <div className='bg-black p-[14px]'>
                 <div className="container">
                     <p className='text-white text-center text-sm'>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>

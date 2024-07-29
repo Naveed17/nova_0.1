@@ -12,13 +12,13 @@ function ProductCard({ ...props }) {
             <div className="bg-gray-200 p-6 min-h-[250px] rounded relative z-10 product-card-media overflow-hidden">
                 <div className='w-[200px] h-[200px] relative m-auto'>
                     <Image
-                        src={item.image}
+                        src={item?.image}
                         alt='product'
                         fill
                         style={{ objectFit: "contain" }}
                         sizes="100vw"
                         quality={75}
-                        blurDataURL={item.image}
+                        blurDataURL={item?.image}
                         placeholder="blur"
                         className='mix-blend-multiply'
                     />
@@ -44,7 +44,7 @@ function ProductCard({ ...props }) {
                 }
                 <div className="flex items-center gap-4">
                     <Typography className='font-medium text-red-500'>
-                        $ {item.price}
+                        $ {item?.price}
                     </Typography>
                     <Typography className='text-gray-500 line-through'>
                         $ {parseFloat((item?.price + 20).toFixed(2))}

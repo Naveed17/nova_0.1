@@ -17,6 +17,6 @@ export const navData = [
   {
     id: "signup",
     title: "Signup",
-    path: "/sign-up",
+    path: "/signup",
   },
 ];
