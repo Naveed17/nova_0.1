@@ -5,8 +5,8 @@ import React from 'react'
 function MainBanner({ ...props }) {
     const { data } = props
     return (
-        <div className='grid grid-cols-5'>
-            <div className="category-menu border-r -1 border-slate-200">
+        <div className='grid col-span-1 md:grid-cols-5'>
+            <div className="category-menu border-r -1 border-slate-200 hidden md:block">
                 <ul className='pt-8 pr-4'>
                     {data.map((item: { name: string, value: string, subcategory: [] }) =>
                         <li className='cursor-pointer py-1 my-2 flex justify-between items-center' key={item.value}>{item.name}
@@ -17,8 +17,8 @@ function MainBanner({ ...props }) {
 
                 </ul>
             </div>
-            <div className="col-span-4 slider pt-8 pl-8">
-                <BannerCarousel />
+            <div className="md:col-span-4 slider pt-8 pl-8">
+                {/* <BannerCarousel /> */}
             </div>
         </div>
     )

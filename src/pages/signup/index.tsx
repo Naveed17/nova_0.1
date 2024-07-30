@@ -7,14 +7,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-function SignIn() {
+function SignUp() {
     return (
-        <div className='flex gap-16 items-center'>
+        <div className='flex flex-col md:flex-row gap-16 md:items-center'>
             <div className="relative">
                 <Image
                     src="/static/images/signin.svg"
                     alt='product'
-
+                    priority
                     style={{ objectFit: "contain" }}
                     height={500}
                     width={600}
@@ -54,7 +54,7 @@ function SignIn() {
         </div>
     )
 }
-SignIn.getLayout = function getLayout(page: React.ReactElement) {
+SignUp.getLayout = function getLayout(page: React.ReactElement) {
     return (
         <AppLayout>
             {page}
@@ -62,4 +62,4 @@ SignIn.getLayout = function getLayout(page: React.ReactElement) {
     )
 }
 
-export default SignIn
+export default SignUp

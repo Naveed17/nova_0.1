@@ -13,7 +13,7 @@ function SignIn() {
                 <Image
                     src="/static/images/signin.svg"
                     alt='product'
-
+                    priority
                     style={{ objectFit: "contain" }}
                     height={500}
                     width={600}

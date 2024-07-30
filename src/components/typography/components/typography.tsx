@@ -49,7 +49,7 @@ const Typography: React.FC<TypographyProps> = ({
     const getClasses = () => {
         switch (variant) {
             case 'h1':
-                return 'text-4xl font-bold text-gray-900';
+                return 'text-3xl md:text-4xl font-bold text-gray-900';
             case 'h2':
                 return 'text-2xl font-semibold text-gray-800';
             case 'h3':

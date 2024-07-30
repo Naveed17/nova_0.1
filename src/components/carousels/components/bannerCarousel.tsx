@@ -46,7 +46,7 @@ export default function BannerCarousel({ ...props }) {
 
 
     const settings = {
-        speed: 1600,
+        speed: 300,
         dots: false,
         fade: true,
         arrows: false,

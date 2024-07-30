@@ -21,7 +21,30 @@ export default function CategoryCarousel({ ...props }) {
         autoplay: true,
         slidesToShow: 4,
         slidesToScroll: 1,
-        beforeChange: (current: number, next: number) => setCurrentIndex(next)
+        beforeChange: (current: number, next: number) => setCurrentIndex(next),
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
     };
 
     return (

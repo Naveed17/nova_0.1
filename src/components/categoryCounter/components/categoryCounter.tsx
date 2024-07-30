@@ -4,7 +4,7 @@ import { useCountdown } from '@hooks/useCountdown';
 import React from 'react'
 
 function SalesCounter() {
-    const { days, hours, minutes, seconds } = useCountdown(new Date('2024-07-30T00:00:00Z'));
+    const { days, hours, minutes, seconds } = useCountdown(new Date('2024-10-30T00:00:00Z'));
     return (
         <div className="flex items-center gap-6">
             <div className="flex p-2 w-[62px] h-[62px] flex-col items-center justify-center bg-white rounded-full">

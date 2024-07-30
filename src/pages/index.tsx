@@ -25,10 +25,11 @@ function Home() {
     const { data, isLoading } = useQuery({ queryKey: ['products'], queryFn: () => getAllProducts() });
     const { data: categories, isLoading: categoriesLoading } = useQuery({ queryKey: ['categories'], queryFn: () => getAllCategories() });
     if (isLoading || categoriesLoading) return (<LoadingScreen />);
+    if (data?.code === "ERR_NETWORK") return <>No Network</>
     return (
         <section className='container'>
             <MainBanner data={categoryData} />
-            <div className="flex gap-16 mt-20 items-center">
+            <div className="flex md:flex-row flex-col items-start gap-8 md:gap-16 mt-20 md:items-center">
                 <AppHeading title="Today's" heading="Flash Sales" />
                 <SalesCounter />
 
@@ -42,11 +43,11 @@ function Home() {
             <div className="mt-16 pb-16 border-b border-gray-200">
                 <AppHeading title="Categories" heading="Browse By Category" />
                 <div className="mt-12">
-                    <CategoryCarousel {...{ categories, categoriesLoading }} />
+                    {/* <CategoryCarousel {...{ categories, categoriesLoading }} /> */}
                 </div>
             </div>
             <div className="mt-16">
-                <div className="flex items-end justify-between">
+                <div className="flex flex-col md:flex-row gap-2 md:items-end justify-between">
                     <AppHeading title="This Month" heading="Best Selling Products" />
                     <Button>
                         View All
@@ -55,7 +56,7 @@ function Home() {
             </div>
             <div className="mt-12">
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
-                    {(isLoading ? Array.from(new Array(4)) : data?.slice(0, 4))?.map((item: any, idx: number) =>
+                    {data && (isLoading ? Array.from(new Array(4)) : data?.slice(0, 4))?.map((item: any, idx: number) =>
                         item ? <ProductCard key={item.id} {...{ item, isLoading }} /> :
                             <LoadingCard key={idx} />
                     )}
@@ -66,7 +67,7 @@ function Home() {
                     <Typography className='text-red-500'>
                         Categories
                     </Typography>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="flex flex-col gap-8 mt-8">
                             <Typography variant='h1' component='h1' className='text-white font-semibold'>
                                 Enhance Your Music Experience
@@ -96,7 +97,8 @@ function Home() {
             <div className="mt-20">
                 <AppHeading title="Our Products" heading="Explore Our Products" />
                 <div className="grid grid-cols-1 gap-y-12 gap-4 md:grid-cols-4 mt-12">
-                    {(isLoading ? Array.from(new Array(8)) : data?.slice(0, 8))?.map((item: any, idx: number) =>
+
+                    {data && (isLoading ? Array.from(new Array(8)) : data?.slice(0, 8))?.map((item: any, idx: number) =>
                         item ? <ProductCard key={item.id} {...{ item, isLoading }} /> :
                             <LoadingCard key={idx} />
                     )}
@@ -107,9 +109,9 @@ function Home() {
             </div>
             <div className="mt-20">
                 <AppHeading title="Featured" heading="New Arrival" />
-                <div className="grid grid-cols-2 gap-4 mt-12">
-                    <div className="bg-black flex flex-col justify-end rounded p-8 bg-[url('/static/images/ps5-playstation_large.svg')] w-full bg-no-repeat h-[600px] bg-[25px_bottom]">
-                        <div className="flex flex-col gap-2 max-w-[50%]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
+                    <div className="bg-black flex flex-col justify-end rounded p-8 bg-[url('/static/images/ps5-playstation_large.svg')] w-full bg-no-repeat md:h-[600px] bg-[25px_bottom]">
+                        <div className="flex flex-col gap-2 md:max-w-[50%]">
                             <Typography variant='h2' component='h2' className='text-white'>
                                 PlayStation 5
                             </Typography>
@@ -123,7 +125,7 @@ function Home() {
                     </div>
                     <div className="flex flex-col gap-4">
                         <div className="bg-black flex flex-col justify-end rounded p-8 bg-[url('/static/images/attractive-woman-wearing.svg')] w-full bg-no-repeat h-full bg-[right_bottom] flex-1">
-                            <div className="flex flex-col gap-2 max-w-[70%]">
+                            <div className="flex flex-col gap-2 md:max-w-[70%]">
                                 <Typography variant='h2' component='h2' className='text-white'>
                                     Women’s Collections
                                 </Typography>
@@ -135,7 +137,7 @@ function Home() {
                                 </Link>
                             </div>
                         </div>
-                        <div className="flex gap-4 flex-1">
+                        <div className="flex flex-col md:flex-row gap-4 flex-1">
                             <div className="bg-black flex flex-col justify-end rounded p-8 bg-[url('/static/images/amazon-echo.svg')] w-full bg-no-repeat h-full bg-[center_center]">
                                 <div className="flex flex-col gap-2">
                                     <Typography variant='h2' component='h2' className='text-white'>

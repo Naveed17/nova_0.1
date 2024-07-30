@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "@styles/globals.css";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { useRouter } from 'next/router';
 interface MyAppProps extends AppProps {
     Component: AppProps["Component"] & NextPageWithLayout;
 }
@@ -14,13 +15,17 @@ type NextPageWithLayout = NextPage & {
 };
 
 function App({ Component, pageProps: { ...pageProps } }: MyAppProps) {
+    const router = useRouter();
     const getLayout = Component.getLayout || ((page) => page);
+    const pageKey = router.asPath;
     const queryClient = new QueryClient();
+
     return (
         <QueryClientProvider client={queryClient}>
-            {getLayout(<Component {...pageProps} />)}
+            {getLayout(<Component key={pageKey} {...pageProps} />)}
         </QueryClientProvider>
     )
 }
+App.displayName = "Nova";
 
 export default App
