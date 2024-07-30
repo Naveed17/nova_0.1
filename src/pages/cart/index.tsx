@@ -1,15 +1,15 @@
 import { AppLayout } from '@components/base';
 import dynamic from 'next/dynamic';
 import React from 'react'
-import { BannerCarousel } from '@components/carousels'
 
-function About() {
+
+function Cart() {
 
     return (
-        <div><BannerCarousel /></div>
+        <>Cart</>
     )
 }
-About.getLayout = function getLayout(page: React.ReactElement) {
+Cart.getLayout = function getLayout(page: React.ReactElement) {
     return (
         <AppLayout>
             {page}
@@ -17,4 +17,4 @@ About.getLayout = function getLayout(page: React.ReactElement) {
     )
 }
 
-export default About
+export default Cart

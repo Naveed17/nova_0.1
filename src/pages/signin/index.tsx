@@ -8,7 +8,7 @@ import React from 'react'
 
 function SignIn() {
     return (
-        <div className='flex gap-16 items-center'>
+        <div className='flex flex-col md:flex-row gap-16 md:items-center'>
             <div className="relative">
                 <Image
                     src="/static/images/signin.svg"
@@ -23,7 +23,7 @@ function SignIn() {
                     className='mix-blend-multiply'
                 />
             </div>
-            <div className="flex flex-col flex-6">
+            <div className="flex flex-col flex-6 px-8 md:px-0">
                 <div className="flex flex-col gap-2">
                     <Typography component='h1' variant='h1'>
                         Log in to Exclusive

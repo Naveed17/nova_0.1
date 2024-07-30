@@ -5,7 +5,7 @@ import React from 'react'
 function MainBanner({ ...props }) {
     const { data } = props
     return (
-        <div className='grid col-span-1 md:grid-cols-5'>
+        <div className='grid grid-cols-1 md:col-span-1 md:grid-cols-5'>
             <div className="category-menu border-r -1 border-slate-200 hidden md:block">
                 <ul className='pt-8 pr-4'>
                     {data.map((item: { name: string, value: string, subcategory: [] }) =>
@@ -17,8 +17,8 @@ function MainBanner({ ...props }) {
 
                 </ul>
             </div>
-            <div className="md:col-span-4 slider pt-8 pl-8">
-                {/* <BannerCarousel /> */}
+            <div className="md:col-span-4 slider pt-4 md:pt-8 md:pl-8">
+                <BannerCarousel />
             </div>
         </div>
     )

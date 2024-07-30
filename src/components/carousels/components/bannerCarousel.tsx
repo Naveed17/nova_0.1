@@ -10,18 +10,18 @@ function CarouselItem({ isActive }: any) {
     return (
         <MotionContainer
             open={isActive}
-            className="flex gap-4 bg-black px-16 py-4 min-h-[400px]"
+            className="flex flex-col md:flex-row gap-4 bg-black px-4 md:px-16 py-4 min-h-[400px]"
         >
             <div className="flex-1 flex flex-col gap-4">
-                <motion.div variants={varFadeInLeft} className='flex gap-4 items-center mt-12'>
+                <motion.div variants={varFadeInLeft} className='flex gap-4 items-center mt-4 md:mt-12'>
                     <ReactSvg path="ic-apple" />
                     <Typography className='text-white'>
                         iPhone 14 Series
                     </Typography>
                 </motion.div>
                 <motion.div variants={varFadeInDown} >
-                    <Typography component='h1' variant='h1' className='text-white leading-[1.5] tracking-wider text-[48px] font-semibold'>
-                        Up to 10% <br /> off Voucher
+                    <Typography component='h1' variant='h1' className='text-white leading-[1.5] tracking-wider md:text-[48px] font-semibold'>
+                        Up to 10%  off Voucher
                     </Typography>
                 </motion.div>
                 <motion.div variants={varFadeInDown}>
@@ -32,7 +32,7 @@ function CarouselItem({ isActive }: any) {
                 </motion.div>
             </div>
             <div className="flex-1 h-[300px]">
-                <motion.div variants={varFadeInUp} className="bg-[url('/static/images/banner.svg')] w-full h-full bg-[-70px_0]" />
+                <motion.div variants={varFadeInUp} className="bg-[url('/static/images/banner.svg')] w-full h-[250px] md:h-full bg-center bg-cover md:bg-auto md:bg-[-70px_0]" />
             </div>
 
 
