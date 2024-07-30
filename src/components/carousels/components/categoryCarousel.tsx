@@ -13,13 +13,18 @@ export default function CategoryCarousel({ ...props }) {
     const handleSelect = (props: any) => {
         setSelected(props)
     }
-
+    const updateCategory = categories?.map((item: any) => {
+        return {
+            title: item,
+            image: item === "electronics" ? "photo_camera.png" : item === "jewelery" ? "ring.webp" : item === "men's clothing" ? "man.avif" : item === "women's clothing" ? "woman.png" : ""
+        }
+    })
     const settings = {
         speed: 500,
         dots: false,
         arrows: false,
         autoplay: true,
-        slidesToShow: 4,
+        slidesToShow: 10,
         slidesToScroll: 1,
         beforeChange: (current: number, next: number) => setCurrentIndex(next),
         responsive: [
@@ -30,27 +35,14 @@ export default function CategoryCarousel({ ...props }) {
                     slidesToScroll: 1,
                 },
             },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                },
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-            },
+
         ],
     };
 
     return (
         <div className='relative'>
             <Slider ref={carouselRef} {...settings}>
-                {categories?.concat([...categories])?.map((item: any, index: number) => (
+                {updateCategory?.concat([...updateCategory, ...updateCategory])?.map((item: any, index: number) => (
                     <div key={index} className='px-2'>
                         <CategoryCard {...{ handleSelect, item, selected }} />
                     </div>

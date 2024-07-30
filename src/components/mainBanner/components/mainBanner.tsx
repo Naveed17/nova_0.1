@@ -17,7 +17,7 @@ function MainBanner({ ...props }) {
 
                 </ul>
             </div>
-            <div className="md:col-span-4 slider pt-4 md:pt-8 md:pl-8">
+            <div className="md:col-span-4 slider pt-4 md:pt-8 md:pl-8 -m-4 md:m-0">
                 <BannerCarousel />
             </div>
         </div>
