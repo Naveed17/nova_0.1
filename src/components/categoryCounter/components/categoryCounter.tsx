@@ -7,7 +7,7 @@ function SalesCounter() {
     const { days, hours, minutes, seconds } = useCountdown(new Date('2024-10-30T00:00:00Z'));
     const { isMobile } = UseMobile();
     return (
-        <div className="flex items-center gap-4 md:gap-6">
+        <div className="flex items-center justify-around md:justify-start gap-4 md:gap-6">
             <div className="flex p-2 w-[52px] h-[52px] md:w-[62px] md:h-[62px] flex-col items-center justify-center bg-white rounded-full">
                 <Typography component='h5' className='font-semibold leading-tight text-slate-800'>
                     {days < 10 ? `0${days}` : days}
