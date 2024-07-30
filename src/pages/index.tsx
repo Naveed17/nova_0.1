@@ -43,7 +43,7 @@ function Home() {
             <div className="mt-16 pb-16 border-b border-gray-200">
                 <AppHeading title="Categories" heading="Browse By Category" />
                 <div className="mt-12">
-                    {/* <CategoryCarousel {...{ categories, categoriesLoading }} /> */}
+                    <CategoryCarousel {...{ categories, categoriesLoading }} />
                 </div>
             </div>
             <div className="mt-16">

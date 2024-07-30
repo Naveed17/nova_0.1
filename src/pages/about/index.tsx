@@ -1,12 +1,19 @@
+import { AppLayout } from '@components/base';
 import dynamic from 'next/dynamic';
 import React from 'react'
-const SalesCarousel = dynamic(() => import("@components/carousels/components/salesCarousel"), {
-    ssr: false
-});
+
 
 function About() {
+
     return (
-        <SalesCarousel />
+        <>about</>
+    )
+}
+About.getLayout = function getLayout(page: React.ReactElement) {
+    return (
+        <AppLayout>
+            {page}
+        </AppLayout>
     )
 }
 

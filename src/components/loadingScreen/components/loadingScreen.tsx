@@ -20,7 +20,7 @@ const waveVariants = {
 const LoadingScreen = () => {
     return (
         <div className="fixed top-0 z-[9999999] w-full h-screen inset-0 bg-gray-800 flex justify-center items-center">
-            <div className="relative w-[400px] h-[4px]">
+            <div className="relative w-[300px] md:w-[400px] h-[4px]">
                 {/* Bottom Line */}
                 <div className="absolute top-0 left-0 h-full w-full bg-gray-400"></div>
 

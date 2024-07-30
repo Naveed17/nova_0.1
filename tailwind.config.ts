@@ -16,7 +16,7 @@ const config: Config = {
       },
     },
     container: {
-      padding: "2rem",
+      padding: "1rem",
       center: true,
       screens: {
         lg: "1170px",

@@ -54,7 +54,7 @@ export default function SalesCarousel({ ...props }) {
                     </div>
                 ))}
             </Slider>
-            <div className='absolute top-[-70px] flex items-center gap-2  right-0'>
+            <div className='absolute top-[-70px] md:flex items-center gap-2  right-0 hidden'>
                 <button className='p-2 rounded-full bg-gray-100' onClick={() => carouselRef.current.slickPrev()}><ReactSvg path='ic-left' /></button>
                 <button className='p-2 rounded-full bg-gray-100' onClick={() => carouselRef.current.slickNext()}><ReactSvg path='ic-right' /></button>
             </div>

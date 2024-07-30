@@ -24,7 +24,7 @@ function SignUp() {
                     className='mix-blend-multiply'
                 />
             </div>
-            <div className="flex flex-col flex-6">
+            <div className="flex flex-col flex-6  px-8 md:px-0">
                 <div className="flex flex-col gap-2">
                     <Typography component='h1' variant='h1'>
                         Create an account
