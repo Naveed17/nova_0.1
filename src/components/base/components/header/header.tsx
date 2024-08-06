@@ -32,7 +32,7 @@ function Header() {
                 </nav>
                 <div className="action-nav flex items-center gap-4">
                     <MainSearch />
-                    <Link href='/'>
+                    <Link href='/wishlist'>
                         <ReactSvg path="ic-fav" width={20} height={18} />
                     </Link>
                     <Link href='/'>

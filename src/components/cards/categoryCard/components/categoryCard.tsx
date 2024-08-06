@@ -5,7 +5,6 @@ import React from 'react'
 
 function CategoryCard({ ...props }) {
     const { item, handleSelect, selected } = props;
-    console.log(item, "item")
     return (
         <div className={`flex items-center flex-col gap-4`} onClick={() => handleSelect(item)}>
             <div className="flex w-[100px] overflow-hidden h-[100px] relative p-4 border rounded-tl-2xl rounded-br-2xl flex-col gap-2 items-center">

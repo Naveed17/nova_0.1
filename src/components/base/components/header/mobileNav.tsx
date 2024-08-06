@@ -4,7 +4,7 @@ import { navData } from './config';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export default function App() {
+export default function MobileNav() {
     const pathname = usePathname();
     const mobileNav = navData.reduce((acc: any, item, idx) => {
         // remove contact object

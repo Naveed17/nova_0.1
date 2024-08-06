@@ -3,6 +3,8 @@ import React from 'react';
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string;
 }
+// input textarea filed
+
 
 const Input: React.FC<InputProps> = ({ label, className, ...props }) => {
     return (

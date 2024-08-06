@@ -29,7 +29,7 @@ const LoadingScreen = () => {
                     className="absolute top-0 left-0 h-full bg-white"
                     initial={{ width: 0 }}
                     animate={{ width: '100%' }}
-                    transition={{ duration: 3, ease: 'easeInOut', repeat: Infinity }} // Adjust duration and easing as needed
+                    transition={{ duration: 3, ease: 'easeInOut' }} // Adjust duration and easing as needed
                 />
             </div>
 
