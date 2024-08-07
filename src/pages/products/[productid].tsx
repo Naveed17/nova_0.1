@@ -79,7 +79,7 @@ function ProductDetails() {
                             <div className="flex items-center gap-4 mt-4">
                                 <div className="border rounded flex items-center">
                                     <button className=' text-black px-4 py-2 rounded'>-</button>
-                                    <input type="number" className='w-12 text-center border-x' value={1} />
+                                    <input type="number" className='w-12 text-center border-x focus:outline-none' readOnly value={1} />
                                     <button className=' text-black px-4 py-2 rounded'>+</button>
                                 </div>
                                 <Button>Buy Now</Button>

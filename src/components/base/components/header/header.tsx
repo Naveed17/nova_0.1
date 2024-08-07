@@ -35,7 +35,7 @@ function Header() {
                     <Link href='/wishlist'>
                         <ReactSvg path="ic-fav" width={20} height={18} />
                     </Link>
-                    <Link href='/'>
+                    <Link href='/cart'>
                         <ReactSvg path="ic-cart" width={28} height={28} />
                     </Link>
                 </div>
