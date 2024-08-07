@@ -17,9 +17,9 @@ export default function ProductDetailsCarousel({ ...props }) {
                     slidesToShow: 1,
                     swipeToSlide: true,
                     arrows: false,
-                    fade: true
+                    fade: true,
                 }}
-                className='float-right w-[80%] bg-gray-100 rounded'
+                className='md:float-right md:w-[80%] bg-gray-100 rounded'
 
             >
                 {sliderData.map((item, index) => {
@@ -42,15 +42,39 @@ export default function ProductDetailsCarousel({ ...props }) {
                     centerMode: true,
                     arrows: false,
                     dots: false,
-                    infinite: true
-                }}
-                className='float-left w-[18%] h-[320px] overflow-hidden'
+                    infinite: true,
+                    responsive: [
+
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 3,
+                                vertical: false,
+                                verticalSwiping: false,
+                                slidesToScroll: 1,
+                                centerPadding: 10
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 3,
+                                vertical: false,
+                                verticalSwiping: false,
+                                slidesToScroll: 10,
+                                centerMode: false
+                            }
+                        }
+                    ],
+                } as any}
+                className='md:float-left md:w-[18%] md:h-[320px] md:overflow-hidden mt-4 md:mt-0'
             >
                 {sliderData.map((item, index) => {
                     return (
-
-                        <div key={index} className="relative w-[140px] h-[80px] bg-gray-100 rounded grid content-center">
-                            <Image src={`/static/images/gr-${item}.png`} alt={`product-${index}`} width={70} className='m-auto' height={50} style={{ objectFit: 'contain' }} />
+                        <div className='px-4'>
+                            <div key={index} className="relative w-[140px] h-[80px] bg-gray-100 rounded grid content-center">
+                                <Image src={`/static/images/gr-${item}.png`} alt={`product-${index}`} width={70} className='m-auto' height={50} style={{ objectFit: 'contain' }} />
+                            </div>
                         </div>
                     )
                 })}
