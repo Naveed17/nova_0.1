@@ -1,8 +1,9 @@
+import useMobile from '@hooks/useMobile/useMobile';
 import Link from 'next/link';
 import React from 'react'
-
 function Breadcrumb({ ...props }) {
-    const { data } = props
+    const { data } = props;
+    const { isMobile } = useMobile()
     return (
         <nav className="flex" aria-label="Breadcrumb">
             <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
@@ -18,7 +19,9 @@ function Breadcrumb({ ...props }) {
                     (!item.href || array.length === 1) ? <li key={`breadcrumb-${idx}`} aria-current="page">
                         <div className="flex items-center text-xs">
                             /
-                            <span className="ms-1 text-sm font-medium text-black md:ms-2">{item.text}</span>
+                            <span className="ms-1 text-sm font-medium text-black md:ms-2 ellipsis max-w-48 sm:max-w-full">
+                                {item.text}
+                            </span>
                         </div>
                     </li> :
                         <li key={`breadcrumb-${idx}`}>
