@@ -19,11 +19,11 @@ export default function ProductDetailsCarousel({ ...props }) {
                     arrows: false,
                     fade: true,
                 }}
-                className='md:float-right md:w-[80%] bg-gray-100 rounded'
+                className='lg:float-right lg:w-[80%] bg-gray-100 rounded'
 
             >
                 {sliderData.map((item, index) => {
-                    return <div key={index} className="p-4 relative w-[446px] h-[315px] grid content-center">
+                    return <div key={index} className="p-4 relative w-[446px] h-[370px] grid content-center">
                         <Image src={`/static/images/gr-${item}.png`} alt="product" width={300} height={200} className='m-auto' />
                     </div>
                 })}
@@ -44,6 +44,20 @@ export default function ProductDetailsCarousel({ ...props }) {
                     dots: false,
                     infinite: true,
                     responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                vertical: false,
+                                slidesToShow: 5,
+                            }
+                        },
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                vertical: false,
+                                slidesToShow: 4,
+                            }
+                        },
 
                         {
                             breakpoint: 600,
@@ -52,13 +66,13 @@ export default function ProductDetailsCarousel({ ...props }) {
                                 vertical: false,
                                 verticalSwiping: false,
                                 slidesToScroll: 1,
-                                centerPadding: 10
+
                             }
                         },
                         {
                             breakpoint: 480,
                             settings: {
-                                slidesToShow: 3,
+                                slidesToShow: 4,
                                 vertical: false,
                                 verticalSwiping: false,
                                 slidesToScroll: 10,
@@ -67,13 +81,13 @@ export default function ProductDetailsCarousel({ ...props }) {
                         }
                     ],
                 } as any}
-                className='md:float-left md:w-[18%] md:h-[320px] md:overflow-hidden mt-4 md:mt-0'
+                className='lg:float-left lg:w-[20%] lg:h-[380px] lg:overflow-hidden mt-4 lg:mt-0'
             >
                 {sliderData.map((item, index) => {
                     return (
-                        <div className='px-4'>
-                            <div key={index} className="relative w-[140px] h-[80px] bg-gray-100 rounded grid content-center">
-                                <Image src={`/static/images/gr-${item}.png`} alt={`product-${index}`} width={70} className='m-auto' height={50} style={{ objectFit: 'contain' }} />
+                        <div className='px-4 py-2'>
+                            <div key={index} className="relative p-2 py-4 bg-gray-100 min-h-[75px]  min-w-[75px] lg:min-w-[85px] rounded grid content-center">
+                                <Image src={`/static/images/gr-${item}.png`} alt={`product-${index}`} width={50} className='m-auto' height={50} />
                             </div>
                         </div>
                     )
