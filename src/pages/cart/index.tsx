@@ -7,6 +7,7 @@ import { Typography } from '@components/typography';
 import { ReactSvg } from '@lib/reactSvg';
 import { Button } from '@components/button';
 import { Input } from '@components/form';
+import { useRouter } from 'next/router';
 const breadcrumbData = [
 
     {
@@ -17,7 +18,7 @@ const breadcrumbData = [
 ]
 
 function Cart() {
-
+    const router = useRouter()
     return (
         <div className='mt-12 mb-20'>
             <Head>
@@ -137,7 +138,7 @@ function Cart() {
                                 </li>
 
                             </ul>
-                            <Button className='w-full mt-4'>
+                            <Button className='w-full mt-4' onClick={() => router.push({ pathname: `${router.asPath}/checkout` })}>
                                 Proceed To Checkout
                             </Button>
 

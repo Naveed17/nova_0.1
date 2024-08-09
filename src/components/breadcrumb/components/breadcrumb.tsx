@@ -1,9 +1,7 @@
-import useMobile from '@hooks/useMobile/useMobile';
 import Link from 'next/link';
 import React from 'react'
 function Breadcrumb({ ...props }) {
     const { data } = props;
-    const { isMobile } = useMobile()
     return (
         <nav className="flex" aria-label="Breadcrumb">
             <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
