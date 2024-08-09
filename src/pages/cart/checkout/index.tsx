@@ -126,7 +126,7 @@ function Checkout() {
                                         <ReactSvg path="ic-master" />
                                     </div>
                                 </div>
-                                <AnimatePresence mode='wait'>
+                                <AnimatePresence>
                                     {
                                         values.paymentMethod === 'bank' &&
                                         <motion.div
@@ -134,15 +134,17 @@ function Checkout() {
                                             initial={{ opacity: 0, height: 0 }}
                                             animate={{ opacity: 1, height: 'auto' }}
                                             exit={{ opacity: 0, height: 0 }}
-                                            transition={{ duration: 0.3 }}
+                                            transition={{ opacity: { duration: 0.1 }, width: { duration: 0.3 } }}
                                             className="border rounded p-4"
 
                                         >
                                             <PaymentForm {...{ formik }} />
 
                                         </motion.div>
+
                                     }
                                 </AnimatePresence>
+
                                 <Radio {...getFieldProps('paymentMethod')} label='Cash on Delivery' defaultChecked={values.paymentMethod === "cod"} labelClasses="text-sm" value='cod' className='self-start' />
 
                             </div>
