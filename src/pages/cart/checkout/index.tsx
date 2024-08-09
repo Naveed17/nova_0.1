@@ -135,11 +135,12 @@ function Checkout() {
                                             animate={{ opacity: 1, height: 'auto' }}
                                             exit={{ opacity: 0, height: 0 }}
                                             transition={{ opacity: { duration: 0.1 }, width: { duration: 0.3 } }}
-                                            className="border rounded p-4"
+                                            className="border rounded"
 
                                         >
-                                            <PaymentForm {...{ formik }} />
-
+                                            <div className="p-4">
+                                                <PaymentForm {...{ formik }} />
+                                            </div>
                                         </motion.div>
 
                                     }
