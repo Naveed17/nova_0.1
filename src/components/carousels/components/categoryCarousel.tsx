@@ -1,7 +1,7 @@
 import Slider from 'react-slick';
 import { useState, useRef } from 'react';
 import { ReactSvg } from '@lib/reactSvg';
-import { CategoryCard } from '@components/cards'
+import { CategoryCard, LoadingCard } from '@components/cards'
 
 
 
@@ -13,6 +13,9 @@ export default function CategoryCarousel({ ...props }) {
     const handleSelect = (props: any) => {
         setSelected(props)
     }
+
+
+
     const updateCategory = categories?.map((item: any) => {
         return {
             title: item,

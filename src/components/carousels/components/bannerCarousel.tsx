@@ -1,7 +1,7 @@
 import Slider from 'react-slick';
 import { motion } from 'framer-motion';
 import { useState, useRef } from 'react';
-import { varFadeInLeft, varFadeInDown, varFadeInUp } from './config'
+import { varFadeInDown, varFadeInUp } from './config'
 import MotionContainer from './motionContainer';
 import { ReactSvg } from '@lib/reactSvg';
 import { Typography } from '@components/typography';
@@ -13,7 +13,7 @@ function CarouselItem({ isActive }: any) {
             className="flex flex-col md:flex-row gap-4 bg-black px-4 md:px-16 py-4 min-h-[400px]"
         >
             <div className="flex-1 flex flex-col gap-4">
-                <motion.div variants={varFadeInLeft} className='flex gap-4 items-center mt-4 md:mt-12'>
+                <motion.div variants={varFadeInDown} className='flex gap-4 items-center mt-4 md:mt-12'>
                     <ReactSvg path="ic-apple" />
                     <Typography className='text-white'>
                         iPhone 14 Series

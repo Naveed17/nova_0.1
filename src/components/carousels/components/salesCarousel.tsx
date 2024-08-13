@@ -1,7 +1,7 @@
 import Slider from 'react-slick';
-import { useState, useRef } from 'react';
+import { useState, useRef, lazy } from 'react';
 import { ReactSvg } from '@lib/reactSvg';
-import { ProductCard } from '@components/cards'
+import { LoadingCard, ProductCard } from '@components/cards'
 
 
 
@@ -9,14 +9,24 @@ export default function SalesCarousel({ ...props }) {
     const { data, isLoading } = props as { data: any[]; isLoading: boolean }
     const carouselRef = useRef<any>(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+    if (isLoading) return (
+        <div className="grid grid-cols-4 gap-4"> {
+            Array.from({ length: 4 }).map((_, index) =>
+                <LoadingCard key={index} />
+            )
+        }</div>
+    )
+
+
     const settings = {
         className: "sales-slider",
         speed: 1000,
         dots: false,
         arrows: false,
-        autoplay: false,
+        autoplay: true,
         slidesToShow: 4,
         slidesToScroll: 1,
+        lazyLoad: true,
         beforeChange: (current: number, next: number) => setCurrentIndex(next),
         responsive: [
             {
@@ -43,7 +53,7 @@ export default function SalesCarousel({ ...props }) {
                 }
             }
         ]
-    };
+    } as any;
 
     return (
         <div className='relative'>

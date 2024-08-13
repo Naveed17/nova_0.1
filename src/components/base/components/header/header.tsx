@@ -5,8 +5,11 @@ import React from 'react'
 import { MainSearch } from '@components/mainSearch'
 import { ReactSvg } from '@lib/reactSvg';
 import { usePathname } from 'next/navigation';
+import { Dropdown, DropdownItem } from '@components/dropdown'
+import { useRouter } from 'next/router'
 function Header() {
     const pathname = usePathname();
+    const router = useRouter()
     return (
         <header className='hidden md:flex flex-col pb-4 border-b border-gray-200 sticky top-0 bg-white z-[99999]'>
             <div className='bg-black p-[14px]'>
@@ -38,6 +41,33 @@ function Header() {
                     <Link href='/cart'>
                         <ReactSvg path="ic-cart" width={28} height={28} />
                     </Link>
+                    <Dropdown trigger={
+
+                        <button className='bg-red-500 text-white p-1 rounded-full'>
+                            <ReactSvg path="ic-user" width={16} height={16} />
+                        </button>
+                    }>
+
+                        <DropdownItem>
+                            <div className="flex items-center gap-2">
+                                <ReactSvg path="ic-user" width={24} height={24} />
+                                <span className='font-medium text-sm'>Jhone Doe</span>
+                            </div>
+                        </DropdownItem>
+                        <DropdownItem>
+                            <div className="flex items-center gap-2" onClick={() => router.push("/account")}>
+                                <ReactSvg path="ic-setting" width={16} height={16} />
+                                <span className='font-medium text-sm'>My Profile</span>
+                            </div>
+                        </DropdownItem>
+                        <DropdownItem>
+                            <div className="flex items-center gap-2">
+                                <ReactSvg path="ic-logout" width={18} height={18} />
+                                <span className='font-medium text-sm'>Logout</span>
+                            </div>
+                        </DropdownItem>
+                    </Dropdown>
+
                 </div>
 
             </div>

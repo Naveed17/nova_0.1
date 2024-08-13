@@ -11,7 +11,7 @@ interface Props {
 }
 
 function IconUrl({ ...props }) {
-    const { path, onChange, className, color, height, width, ...rest } = props;
+    const { path, onChange, className, color, height, width, ...rest } = props as any;
     const prefix = "/static/icons/";
     return path && <ReactSVG  {...rest}
         onClick={onChange}

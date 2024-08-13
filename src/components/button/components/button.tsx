@@ -14,7 +14,7 @@ interface ButtonProps {
 
 // Create the Button component
 const Button: React.FC<ButtonProps> = ({ onClick, children, className = '', disabled = false, type = 'button' }) => {
-    const buttonClasses = "px-8 py-3 rounded text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 disabled:bg-gray-400";
+    const buttonClasses = "px-8 py-3 md:py-2 rounded text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 disabled:bg-gray-400";
     return (
         <button
             onClick={onClick}

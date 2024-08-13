@@ -38,7 +38,7 @@ function ProductCard({ ...props }) {
                     </Typography>
                 </div>
             </div>
-            <div className="mt-2 flex flex-col gap-2">
+            <div className="mt-2 flex flex-col gap-[0.15rem]">
                 {isLoading ?
                     <div className="animate-pulse">
                         <div className="h-4 bg-gray-300 rounded w-3/4"></div>

@@ -82,7 +82,7 @@ function ProductDetails() {
                                     <input type="number" className='w-12 text-center border-x focus:outline-none' readOnly value={1} />
                                     <button className=' text-black px-4 py-2 rounded'>+</button>
                                 </div>
-                                <Button>Buy Now</Button>
+                                <Button onClick={() => router.push("/cart")}>Buy Now</Button>
                                 <button className='border rounded p-2'>
                                     <ReactSvg path="ic-fav" />
                                 </button>

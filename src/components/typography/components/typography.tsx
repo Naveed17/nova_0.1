@@ -49,19 +49,19 @@ const Typography: React.FC<TypographyProps> = ({
     const getClasses = () => {
         switch (variant) {
             case 'h1':
-                return 'text-3xl md:text-4xl font-bold text-gray-900';
+                return 'text-3xl md:text-4xl font-bold text-gray-800';
             case 'h2':
                 return 'text-2xl font-semibold text-gray-800';
             case 'h3':
-                return 'text-xl font-semibold text-gray-700';
+                return 'text-xl font-semibold text-gray-800';
             case 'h4':
-                return 'text-lg font-semibold text-gray-600';
+                return 'text-lg font-semibold text-gray-800';
             case 'h5':
-                return 'text-base font-semibold text-gray-500';
+                return 'text-base font-semibold text-gray-800';
             case 'h6':
-                return 'text-sm font-semibold text-gray-400';
+                return 'text-sm font-semibold text-gray-800';
             case 'body1':
-                return 'text-lg text-gray-700 leading-relaxed';
+                return 'text-base text-gray-800 leading-relaxed';
             case 'link':
                 return 'text-blue-500 hover:text-blue-700';
             default:
