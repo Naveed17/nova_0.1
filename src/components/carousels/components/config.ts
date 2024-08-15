@@ -15,9 +15,9 @@ export const varFadeIn = {
 };
 
 export const varFadeInUp = {
-  initial: { y: 35, opacity: 0 },
-  animate: { y: 0, opacity: 1, transition: TRANSITION_ENTER },
-  exit: { y: 35, opacity: 0, transition: TRANSITION_EXIT },
+  initial: { x: 35, y: 35, opacity: 0, scale: 2 },
+  animate: { x: 0, y: 0, opacity: 1, scale: 1, transition: TRANSITION_ENTER },
+  exit: { x: 35, y: 35, opacity: 0, scale: 2, transition: TRANSITION_EXIT },
 };
 
 export const varFadeInLeft = {

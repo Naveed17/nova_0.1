@@ -5,34 +5,45 @@ import { varFadeInDown, varFadeInUp } from './config'
 import MotionContainer from './motionContainer';
 import { ReactSvg } from '@lib/reactSvg';
 import { Typography } from '@components/typography';
+import { Button } from '@components/button';
 
 function CarouselItem({ isActive }: any) {
     return (
         <MotionContainer
             open={isActive}
-            className="flex flex-col md:flex-row gap-4 bg-black px-4 md:px-16 py-4 min-h-[400px]"
+            className="flex relative container z-10 flex-col md:flex-row gap-4 py-4 min-h-[500px] justify-center"
         >
-            <div className="flex-1 flex flex-col gap-4">
-                <motion.div variants={varFadeInDown} className='flex gap-4 items-center mt-4 md:mt-12'>
-                    <ReactSvg path="ic-apple" />
-                    <Typography className='text-white'>
-                        iPhone 14 Series
+            <motion.div variants={varFadeInDown} className="flex-1 flex flex-col gap-4 justify-center">
+                <div className="bg-red-500 self-start rounded p-[2px] px-5">
+                    <Typography className='text-sm text-white uppercase'>Big Sale</Typography>
+                </div>
+                <div className="flex flex-col">
+                    <Typography component='h1' className='text-[42px] font-black font-mulish'>
+                        Best Deal On
                     </Typography>
-                </motion.div>
-                <motion.div variants={varFadeInDown} >
-                    <Typography component='h1' variant='h1' className='text-white leading-[1.5] tracking-wider md:text-[48px] font-semibold'>
-                        Up to 10%  off Voucher
+                    <Typography component='h1' className='text-[42px] -mt-2 font-bold font-black font-mulish'>
+                        Laptops and Accessories
                     </Typography>
-                </motion.div>
-                <motion.div variants={varFadeInDown}>
-                    <Typography component='a' className='text-white flex gap-3 items-center'>
-                        <span className='border-b border-white'>Shop Now </span>
-                        <ReactSvg path="ic-arrow-right-white" />
+                    <Typography className='text-gray-500 text-base'>
+                        Up to 50% off
                     </Typography>
-                </motion.div>
-            </div>
-            <div className="flex-1 h-[300px]">
-                <motion.div variants={varFadeInUp} className="bg-[url('/static/images/banner.svg')] w-full h-[250px] md:h-full bg-center bg-cover md:bg-auto md:bg-[-70px_0]" />
+                    <Typography className='text-[18px]'>From: {" "}
+                        <motion.span
+                            animate={{ rotate: [-1.5, 1.5, -1.5] }}
+                            transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
+                            className='text-red-500 text-[22px] font-bold inline-flex'
+                        >
+                            $499.99
+                        </motion.span>
+                    </Typography>
+
+                </div>
+                <Button className='self-start'>
+                    Show Now
+                </Button>
+            </motion.div>
+            <div className="flex-1 lg:absolute lg:h-full  w-full lg:z-[-1]">
+                <motion.div variants={varFadeInUp} className="bg-[url('/static/images/banner.png')] h-[300px] sm:[h-500] md:h-full bg-right bg-no-repeat bg-contain" />
             </div>
 
 
@@ -67,7 +78,7 @@ export default function BannerCarousel({ ...props }) {
                 {[1, 2, 3, 4].map((item, index) => (
                     <div
                         onClick={() => carouselRef.current.slickGoTo(index)}
-                        key={item} className={`w-3 h-3 rounded-full border-2 border-transparent ${index === currentIndex ? 'bg-red-600 !border-white' : 'bg-zinc-500'}`} />
+                        key={item} className={`w-3 h-3 rounded-full border-[1.5px] border-transparent ${index === currentIndex ? 'bg-red-600 !border-white ring-2 ring-zinc-600' : 'bg-zinc-300'}`} />
                 ))}
             </div>
         </div>

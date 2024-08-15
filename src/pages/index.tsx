@@ -28,7 +28,7 @@ function Home() {
     const { data, isLoading } = useQuery({ queryKey: ['products'], queryFn: () => getAllProducts() });
     const { data: categories, isLoading: categoriesLoading } = useQuery({ queryKey: ['categories'], queryFn: () => getAllCategories() });
     return (
-        <div>
+        <>
             <Head>
                 <title>Nova&apos;s Home</title>
                 <meta
@@ -36,8 +36,9 @@ function Home() {
                     content="width=device-width, initial-scale=1"
                 ></meta>
             </Head>
+            <MainBanner data={categoryData} />
             <section className='container'>
-                <MainBanner data={categoryData} />
+
                 <div className="flex md:flex-row flex-col items-start gap-4 md:gap-16 mt-20 md:items-center">
                     <AppHeading title="Today's" heading="Flash Sales" />
                     <SalesCounter />
@@ -225,7 +226,7 @@ function Home() {
                     </div>
                 </div>
             </section>
-        </div>
+        </>
     )
 }
 Home.getLayout = function getLayout(page: React.ReactElement) {
