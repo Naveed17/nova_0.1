@@ -7,7 +7,7 @@ function AppHeading({ ...props }) {
         <div className='flex flex-col gap-3 md:gap-6'>
             <div className="flex gap-4 items-center">
                 <div className='w-5 h-10 bg-red-500 rounded' />
-                <Typography className='text-red-500 font-medium'>
+                <Typography className='text-red-500 font-bold font-mulish'>
                     {title}
                 </Typography>
             </div>

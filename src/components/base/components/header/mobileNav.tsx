@@ -29,7 +29,7 @@ export default function MobileNav() {
                             key={index}
 
                         >
-                            <Link className={`pb-[2px]`} href={item.path}>{item.title}</Link>
+                            <Link className={`pb-[2px] font-medium`} href={item.path}>{item.title}</Link>
                             {item.path === pathname && (
                                 <motion.div className="border-b border-gray-900" layoutId="highlight" />
                             )}
