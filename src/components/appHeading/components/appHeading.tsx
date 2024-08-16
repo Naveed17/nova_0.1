@@ -12,7 +12,7 @@ function AppHeading({ ...props }) {
                 </Typography>
             </div>
             {heading && (
-                <Typography component='h3' variant='h1' className='font-semibold'>
+                <Typography component='h3' variant='h1' className='font-black font-mulish'>
                     {heading}
                 </Typography>
             )

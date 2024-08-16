@@ -14,7 +14,7 @@ const Input: React.FC<InputProps> = ({ label, className = "", inputClasses, ...p
             {label && <label className="mb-2 text-sm font-medium text-gray-700">{label}</label>}
             <input
                 {...props}
-                className={twMerge(`text-sm p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-500 ${inputClasses} w-full`)}
+                className={twMerge(`text-sm p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-500 ${inputClasses} w-full`)}
             />
         </div>
     );

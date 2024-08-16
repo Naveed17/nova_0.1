@@ -88,7 +88,7 @@ function Home() {
 
 
                             </div>
-                            <div className="relative h-52 md:h-auto">
+                            <div className="relative h-52 md:h-[300px]">
                                 <Image
                                     alt='product'
                                     fill

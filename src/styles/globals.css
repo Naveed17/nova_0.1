@@ -64,3 +64,24 @@ tr::after {
     white-space: nowrap;
     overflow: hidden;
 }
+
+.cat-card .cat-img {
+    overflow: hidden;
+}
+
+.cat-card .cat-img::before {
+    content: '';
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(-40deg, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.5) 50%, rgba(0, 0, 0, 0.2) 100%);
+    position: absolute;
+    top: 0;
+
+}
+
+.cat-card .cat-img:hover::before {
+    display: flex;
+}

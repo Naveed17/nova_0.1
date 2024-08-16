@@ -11,7 +11,7 @@ function SalesCounter() {
                 <Typography className='text-xs font-medium text-slate-800'>
                     Days
                 </Typography>
-                <Typography component='h5' className='text-3xl font-bold text-slate-800'>
+                <Typography component='h5' className='text-3xl font-black text-slate-800 font-mulish'>
                     {days < 10 ? `0${days}` : days}
                 </Typography>
 
@@ -20,7 +20,7 @@ function SalesCounter() {
                 <Typography className='text-xs font-medium text-slate-800'>
                     Hours
                 </Typography>
-                <Typography component='h5' className='text-3xl font-bold text-slate-800'>
+                <Typography component='h5' className='text-3xl font-black text-slate-800 font-mulish'>
                     {hours < 10 ? `0${hours}` : hours}
                 </Typography>
 
@@ -29,16 +29,16 @@ function SalesCounter() {
                 <Typography className='text-xs font-medium text-slate-800'>
                     Minutes
                 </Typography>
-                <Typography component='h5' className='text-3xl font-bold text-slate-800'>
+                <Typography component='h5' className='text-3xl font-black text-slate-800 font-mulish'>
                     {minutes < 10 ? `0${minutes}` : minutes}
                 </Typography>
 
             </div> :
             <div className="flex flex-col gap-1">
-                <Typography className='text-xs font-medium text-slate-800'>
+                <Typography className='text-xs font-medium text-slate-800 '>
                     Seconds
                 </Typography>
-                <div className='text-3xl font-bold text-slate-800'>
+                <div className='text-3xl font-black text-slate-800 font-mulish'>
                     {seconds < 10 ? `0${seconds}` : seconds}
                 </div>
             </div>

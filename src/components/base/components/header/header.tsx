@@ -26,7 +26,7 @@ function Header() {
                         {
                             navData.map((item) => (
                                 <li key={item.id}>
-                                    <Link className={`pb-[2px] hover:border-b hover:border-black font-medium transition duration-300 ${item.path === pathname ? 'border-b border-black' : ''}`} href={item.path}>{item.title}</Link>
+                                    <Link className={`pb-[2px] font-mulish hover:border-b hover:border-black font-bold transition duration-300 ${item.path === pathname ? 'border-b border-black' : ''}`} href={item.path}>{item.title}</Link>
                                 </li>
                             ))
 
